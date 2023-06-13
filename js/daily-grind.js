@@ -56,15 +56,16 @@ switch (today) {
         }
         break;
 
+    
     case 1:
         today = "Monday";
         coffee = {
-            name: "Bubble Tea",
-            color: "pink",
-            pic: "images/bubble-tea.jpg",
-            alt: "A picture of a bubble tea",
-            day: "Monday",
-            desc: `I like me some bubble tea!`
+            name: "Cold Brew",
+            color: "maroon",
+            pic: "images/cold-brew.jpg",
+            alt: "A picture of a Cold Brew",
+            day: "Saturday",
+            desc: `Ice cold.. like polar bears.`
         }
         break;
 
@@ -84,7 +85,7 @@ switch (today) {
         today = "Wednesday";
         coffee = {
             name: "Caramel Latte",
-            color: "yellow",
+            color: "chartreuse",
             pic: "images/caramel-latte.jpg",
             alt: "A picture of a Caramel Latte",
             day: "Wednesday",
@@ -96,7 +97,7 @@ switch (today) {
         today = "Thursday";
         coffee = {
             name: "Mocha",
-            color: "brown",
+            color: "coral",
             pic: "images/mocha.jpg",
             alt: "A picture of a Mocha",
             day: "Thursday",
@@ -108,7 +109,7 @@ switch (today) {
         today = "Friday";
         coffee = {
             name: "Frappaccino",
-            color: "lightblue",
+            color: "beige",
             pic: "images/frappaccino.jpg",
             alt: "A picture of a Frappaccino",
             day: "Friday",
@@ -116,25 +117,49 @@ switch (today) {
         }
         break;
 
-    case 6:
+     case 6:
         today = "Saturday";
         coffee = {
-            name: "Cold Brew",
-            color: "red",
-            pic: "images/cold-brew.jpg",
-            alt: "A picture of a Cold Brew",
-            day: "Saturday",
-            desc: `Ice cold.. like polar bears.`
+            name: "Bubble Tea",
+            color: "crimson",
+            pic: "images/bubble-tea.jpg",
+            alt: "A picture of a bubble tea",
+            day: "Monday",
+            desc: `I like me some bubble tea!`
         }
         break;
+
 
     default:
         today = "Not sure what day it is!";
 }
 
-document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
+today = "Not sure what day it is!";
 
+function coffeeDescription(){
+    return `<p>
+    <span class="feature">${coffee.name} is </span> Gluten-free selfies
+    normcore chillwave. Listicle 90's chambray, seitan cold-pressed try-hard
+    Etsy authentic flexitarian vinyl. Meditation bespoke freegan,
+    single-origin coffee cred seitan 90's gentrify brunch Williamsburg squid
+    cold-pressed. Brooklyn readymade Tumblr wayfarers ethical.
+  </p> 
+  <p>
+    <span class="feature">Enjoy ${coffee.name} with our </span> Polaroid
+    iPhone plaid, Pitchfork Shoreditch paleo. Hashtag keytar chia scenester
+    Pinterest, semiotics tousled food truck. YOLO scenester deep v,
+    taxidermy paleo quinoa McSweeney's Carles VHS mustache Williamsburg
+    gluten-free readymade cold-pressed. Truffaut Thundercats Schlitz,
+    listicle organic Brooklyn paleo squid asymmetrical readymade migas
+    gluten-free Austin.
+  </p>
+    `;
+}
+
+
+document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
 document.querySelector("html").style.backgroundColor = coffee.color;
+document.getElementById("coffee-description").innerHTML = coffeeDescription();
 
 //alert(today);
 console.log(coffee);
